@@ -1,0 +1,34 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		BigDecimal a = new BigDecimal(sc.next());
+		BigDecimal b = new BigDecimal(sc.next());
+
+		BigDecimal result = a.multiply(b);
+		System.out.println(result.setScale(0, RoundingMode.DOWN));
+	
+	}
+}
+or
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+public class Main {
+	public static void main(String[] args) {
+	Scanner sc= new Scanner(System.in); 
+			BigDecimal a = BigDecimal.valueOf(sc.nextLong());
+			BigDecimal b = BigDecimal.valueOf(sc.nextDouble());
+			BigInteger ans = a.multiply(b).toBigInteger();
+			System.out.println(ans);
+		}
+	}
+
