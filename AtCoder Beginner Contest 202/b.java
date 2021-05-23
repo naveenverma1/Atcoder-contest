@@ -4,16 +4,16 @@ import java.util.stream.IntStream;
 import java.io.*;
 import java.util.*;
 
-public class a {
+public class Main {
 
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
-        //int t = sc.nextInt();
-        //while(t-->0){
+     //   int t = sc.nextInt();
+      //  while(t-->0){
         Naveen problem = new Naveen(sc);
             problem.solve(out);
-       // }
+      //  }
         out.flush();
     }
 
@@ -21,35 +21,31 @@ public class a {
 
 class Naveen {
 
-    int a,b,c;
+    String s;
     //int[]  arr;
     
 
     Naveen(FastScanner sc) {
     
-
-         a = sc.nextInt();
-         b = sc.nextInt();
-         c = sc.nextInt();
+         s = sc.next();
        //  arr = sc.arrayInt(n);
     }
 
     void solve(PrintWriter out) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
-
-list.add(a);
-list.add(b);
-list.add(c);
-Collections.sort(list);
       
-       if(list.get(2)-list.get(1)==list.get(1)-list.get(0)){
-           System.out.println("Yes");
-       }else{
-        System.out.println("No");
+String k = "";
+for(int i =s.length()-1;i>=0;i--){
 
-       }
-      
+    if(s.charAt(i)=='6'){
+        k +='9';
+    }else
+    if(s.charAt(i)=='9'){
+        k +='6';
+    }else{
    
+    k +=s.charAt(i);}
+}
+       out.println(k);
     }
 
    

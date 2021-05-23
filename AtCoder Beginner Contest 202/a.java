@@ -4,13 +4,13 @@ import java.util.stream.IntStream;
 import java.io.*;
 import java.util.*;
 
-public class a {
+public class Main {
 
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
-        //int t = sc.nextInt();
-        //while(t-->0){
+      //  int t = sc.nextInt();
+      //  while(t-->0){
         Naveen problem = new Naveen(sc);
             problem.solve(out);
        // }
@@ -27,7 +27,6 @@ class Naveen {
 
     Naveen(FastScanner sc) {
     
-
          a = sc.nextInt();
          b = sc.nextInt();
          c = sc.nextInt();
@@ -35,21 +34,12 @@ class Naveen {
     }
 
     void solve(PrintWriter out) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
-
-list.add(a);
-list.add(b);
-list.add(c);
-Collections.sort(list);
       
-       if(list.get(2)-list.get(1)==list.get(1)-list.get(0)){
-           System.out.println("Yes");
-       }else{
-        System.out.println("No");
+      int sum = a+b+c;
 
-       }
-      
-   
+    out.println(21-sum);
+
+       
     }
 
    
