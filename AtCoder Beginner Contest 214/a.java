@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class a {
 
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();

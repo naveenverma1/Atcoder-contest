@@ -9,45 +9,57 @@ public class b {
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
-        // int t = sc.nextInt();
-        // while (t-- > 0) {
+      //  int t = sc.nextInt();
+      //  while(t-->0){
         Naveen problem = new Naveen(sc);
-        problem.solve(out);
-        // }
-        // out.flush();
+            problem.solve(out);
+      //  }
+        out.flush();
     }
 
 }
 
 class Naveen {
 
-    int s,t;
-    // int[] arr;
+    String a,b;
+    //int[]  arr;
+    
 
     Naveen(FastScanner sc) {
-
-        s = sc.nextInt();
-        t = sc.nextInt();
-        // arr = sc.arrayInt(n);
+    
+         a = sc.next();
+         b = sc.next();
+       //  arr = sc.arrayInt(n);
     }
 
     void solve(PrintWriter out) {
-        int count = 0;
-        
-        for (int i = 0; i < 101; i++) {
-            for (int j = 0; j < 101; j++) {
-                for (int k = 0; k < 101; k++) {
-                    if (i + j + k <= s && i * j * k <= t) {
-                        count += 1;
-                    }
-                }
+      
+        int lenA = a.length();
+        int lenB = b.length();
+ 
+        for (int i = 0; i < Math.min(lenA, lenB); i++){
+            int a1 = a.charAt(i);
+            int b1 = b.charAt(i);
+            if (a1 < b1){
+                System.out.println("Yes");
+                return;
+            }
+            else if (a1 > b1){
+                System.out.println("No");
+                return;
             }
         }
-
-        System.out.println(count);
-
+ 
+        if (lenA > lenB){
+            System.out.println("No");
+        }
+        else{
+            System.out.println("Yes");
+        }
+       
     }
 
+   
 }
 
 class FastScanner {
@@ -198,34 +210,34 @@ class FastScanner {
 
 class My {
 
-    public static long lower(long arr[], long key) {
+  public static long lower(long arr[],long key){
         int low = 0;
-        int high = arr.length - 1;
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            if (arr[mid] >= key) {
+        int high = arr.length-1;
+        while(low < high){
+            int mid = low + (high - low)/2;
+            if(arr[mid] >= key){
                 high = mid;
-            } else {
-                low = mid + 1;
+            }
+            else{
+                low = mid+1;
             }
         }
         return low;
     }
-
-    public static int upper(int arr[], int key) {
-        int low = 0;
-        int high = arr.length - 1;
-        while (low < high) {
-            int mid = low + (high - low + 1) / 2;
-            if (arr[mid] <= key) {
-                low = mid;
-            } else {
-                high = mid - 1;
-            }
+public static int upper(int arr[],int key){
+    int low = 0;
+    int high = arr.length-1;
+    while(low < high){
+        int mid = low + (high - low+1)/2;
+        if(arr[mid] <= key){
+            low = mid;
         }
-        return low;
+        else{
+            high = mid-1;
+        }
     }
-
+    return low;
+}
     static void ans(boolean b) {
         System.out.println(b ? "Yes" : "No");
     }

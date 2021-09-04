@@ -4,52 +4,58 @@ import java.util.stream.IntStream;
 import java.io.*;
 import java.util.*;
 
-public class b {
+public class a {
 
     public static void main(String[] args) {
         FastScanner sc = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
-        // int t = sc.nextInt();
-        // while (t-- > 0) {
+    //    int t = sc.nextInt();
+      //  while(t-->0){
         Naveen problem = new Naveen(sc);
-        problem.solve(out);
-        // }
-        // out.flush();
+            problem.solve(out);
+     //   }
+        out.flush();
     }
 
 }
 
 class Naveen {
 
-    int s,t;
-    // int[] arr;
+    String a,b,c;
+    //int[]  arr;
+    
 
     Naveen(FastScanner sc) {
-
-        s = sc.nextInt();
-        t = sc.nextInt();
-        // arr = sc.arrayInt(n);
+    
+         a = sc.next();
+         b = sc.next();
+         c = sc.next();
+       //  arr = sc.arrayInt(n);
     }
 
     void solve(PrintWriter out) {
-        int count = 0;
-        
-        for (int i = 0; i < 101; i++) {
-            for (int j = 0; j < 101; j++) {
-                for (int k = 0; k < 101; k++) {
-                    if (i + j + k <= s && i * j * k <= t) {
-                        count += 1;
-                    }
-                }
-            }
-        }
+      
 
-        System.out.println(count);
 
-    }
+HashSet set  = new HashSet<>();
 
+set.add("ABC");
+set.add("ARC");
+set.add("AGC");
+set.add("AHC");
+
+   if(set.contains(a)){
+set.remove(a);
+   }
+   if(set.contains(b)){
+    set.remove(b);
+       }
+       if(set.contains(c)){
+        set.remove(c);
+           }
+           System.out.println(set.iterator().next());
 }
-
+}
 class FastScanner {
 
     private final InputStream in = System.in;
@@ -198,34 +204,34 @@ class FastScanner {
 
 class My {
 
-    public static long lower(long arr[], long key) {
+  public static long lower(long arr[],long key){
         int low = 0;
-        int high = arr.length - 1;
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            if (arr[mid] >= key) {
+        int high = arr.length-1;
+        while(low < high){
+            int mid = low + (high - low)/2;
+            if(arr[mid] >= key){
                 high = mid;
-            } else {
-                low = mid + 1;
+            }
+            else{
+                low = mid+1;
             }
         }
         return low;
     }
-
-    public static int upper(int arr[], int key) {
-        int low = 0;
-        int high = arr.length - 1;
-        while (low < high) {
-            int mid = low + (high - low + 1) / 2;
-            if (arr[mid] <= key) {
-                low = mid;
-            } else {
-                high = mid - 1;
-            }
+public static int upper(int arr[],int key){
+    int low = 0;
+    int high = arr.length-1;
+    while(low < high){
+        int mid = low + (high - low+1)/2;
+        if(arr[mid] <= key){
+            low = mid;
         }
-        return low;
+        else{
+            high = mid-1;
+        }
     }
-
+    return low;
+}
     static void ans(boolean b) {
         System.out.println(b ? "Yes" : "No");
     }
